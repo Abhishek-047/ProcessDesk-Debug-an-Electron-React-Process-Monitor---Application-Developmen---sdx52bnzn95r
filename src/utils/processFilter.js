@@ -6,7 +6,7 @@ export function filterProcesses(list, query) {
   if (!needle) return list;
   return list.filter(
     (p) =>
-      String(p.pid).includes(needle) ||
+      normalizeText(p.pid).includes(needle) ||
       normalizeText(p.name).includes(needle) ||
       normalizeText(p.user).includes(needle),
   );
